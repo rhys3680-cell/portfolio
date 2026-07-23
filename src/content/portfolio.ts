@@ -68,3 +68,33 @@ export const education = [
   "코드잇 스프린트 프론트엔드 심화 (2025.04~06)",
   "부산IT교육센터 리액트와 스프링을 활용한 자바 풀스택 개발자 과정 (2024.08~2025.03)",
 ] as const;
+
+export const projects = {
+  agentF: {
+    id: "agent-f",
+    name: "Agent-F",
+    tagline: "ERP 데이터를 경영진이 실시간으로 보는 AI 리포트 서비스",
+    period: "2025.09 - 2026.01 (인턴)",
+    role: "스트리밍·상태관리·인증 등 프론트 아키텍처 설계·구현",
+    oneLiner:
+      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 구현하고, 연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
+  },
+  challenger: {
+    id: "challenger",
+    name: "Challenger",
+    tagline: "패션기업 MD를 위한 B2B 업무 웹앱",
+    period: "2026.01 - 2026.02 (인턴)",
+    role: "핵심 업무 화면부터 인증·상태관리 인프라까지 프론트 설계·구현",
+    oneLiner:
+      "동시 요청 시 터지던 JWT refresh race condition을, boolean flag가 아니라 in-flight Promise 싱글톤으로 refresh 1회 보장하도록 재설계.",
+  },
+  erp: {
+    id: "erp",
+    name: "ERP 자동화 파이프라인",
+    tagline: "API 없는 ERP를 UI 자동화한 양방향 데이터 파이프라인",
+    period: "2026.02 - 2026.02 (인턴)",
+    role: "고민 필요",
+    oneLiner:
+      "API도 DB 접근도 없는 ERP를 pywinauto UI 자동화로 뚫어, 5년치 62만 건 백필 + 15종 태스크 무인 자동화.",
+  },
+};
