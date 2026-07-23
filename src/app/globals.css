@@ -47,3 +47,8 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@page {
+  size: A4 landscape; /* 슬라이드/화면 비율에 가까움. 세로면 landscape 빼기 */
+  margin: 0; /* 화면 꽉 차게 = 여백 0 */
+}
