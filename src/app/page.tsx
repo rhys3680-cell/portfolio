@@ -1,3 +1,4 @@
+import { AgentFArchitecture } from "@/components/sections/agentf/AgentFArchitecture";
 import { AgentFOverview } from "@/components/sections/agentf/AgentFOverview";
 import { HighlightsSection } from "@/components/sections/HighlightsSection";
 import { TitleSection } from "@/components/sections/TitleSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <TitleSection />
       <HighlightsSection />
       <AgentFOverview />
+      <AgentFArchitecture />
     </main>
   );
 }

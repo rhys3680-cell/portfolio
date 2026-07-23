@@ -24,12 +24,15 @@ export function AgentFOverview() {
         </div>
       </dl>
 
-      <p className="max-w-3xl text-xl font-medium leading-relaxed sm:text-2xl">
-        {p.oneLiner}
-      </p>
-
-      <div className="mt-10 flex min-h-56 items-center justify-center rounded-2xl border border-dashed border-border bg-surface/50 text-sm text-muted">
-        전체 아키텍처 다이어그램 (예정)
+      <div className="max-w-3xl space-y-2">
+        {p.oneLiner.map((line) => (
+          <p
+            key={line}
+            className="text-xl font-medium leading-relaxed sm:text-2xl"
+          >
+            {line}
+          </p>
+        ))}
       </div>
     </Section>
   );
