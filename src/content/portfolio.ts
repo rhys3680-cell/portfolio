@@ -27,28 +27,36 @@ export const profile = {
 export const highlights: {
   icon: LucideIcon;
   title: string;
-  desc: string;
+  desc: string[]; // ← string에서 string[]로
   href: string;
 }[] = [
   {
     icon: Zap,
     title: "인증 멀티룸 SSE 스트리밍",
-    desc: "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 구현하고, 연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
+    desc: [
+      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 직접 구현.",
+      "연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
+    ],
     href: "#agent-f",
   },
   {
     icon: ShieldCheck,
     title: "JWT refresh race condition 해결",
-    desc: "동시 401을 in-flight Promise 공유(single-flight)로 refresh 1회 보장.",
+    desc: [
+      "동시 401을 in-flight Promise 공유(single-flight)로 refresh 1회 보장.",
+    ],
     href: "#challenger",
   },
   {
     icon: Gauge,
+
     title: "렌더 병목 O(N²)→O(N)",
-    desc: "대량 조회 시 UI 프리징을 유발하던 Array.find를 복합 키 Map 인덱싱으로 전환.",
+    desc: [
+      "대량 조회 시 UI 프리징을 유발하던 Array.find를 복합 키 Map 인덱싱으로 전환.",
+    ],
     href: "#agent-f",
   },
-] as const;
+];
 
 export const stack = {
   main: [

@@ -21,7 +21,11 @@ export function HighlightsSection() {
             >
               <Icon className="size-9 text-accent" aria-hidden />
               <h3 className="mt-5 text-lg font-bold leading-snug">{title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{desc}</p>
+              <div className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
+                {desc.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
               <span className="mt-auto flex items-center gap-1 pt-5 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                 자세히 <ArrowRight className="size-4" aria-hidden />
               </span>
