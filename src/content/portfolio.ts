@@ -33,7 +33,7 @@ export const highlights: {
   {
     icon: Zap,
     title: "인증 멀티룸 SSE 스트리밍",
-    desc: "EventSource가 못 하는 헤더 인증·이벤트 순서 정합성을 Fetch로 직접 구현.",
+    desc: "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 구현하고, 연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
     href: "#agent-f",
   },
   {
@@ -76,8 +76,10 @@ export const projects = {
     tagline: "ERP 데이터를 경영진이 실시간으로 보는 AI 리포트 서비스",
     period: "2025.09 - 2026.01 (인턴)",
     role: "스트리밍·상태관리·인증 등 프론트 아키텍처 설계·구현",
-    oneLiner:
-      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 구현하고, 연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
+    oneLiner: [
+      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 구현.",
+      "연결 소유권을 전역 스토어로 옮겨, 페이지를 이동해도 스트림이 끊기지 않게 설계.",
+    ],
   },
   challenger: {
     id: "challenger",
@@ -85,8 +87,10 @@ export const projects = {
     tagline: "패션기업 MD를 위한 B2B 업무 웹앱",
     period: "2026.01 - 2026.02 (인턴)",
     role: "핵심 업무 화면부터 인증·상태관리 인프라까지 프론트 설계·구현",
-    oneLiner:
-      "동시 요청 시 터지던 JWT refresh race condition을, boolean flag가 아니라 in-flight Promise 싱글톤으로 refresh 1회 보장하도록 재설계.",
+    oneLiner: [
+      "동시 요청 시 터지던 JWT refresh race condition을 분석.",
+      "boolean flag가 아니라 in-flight Promise 싱글톤으로 refresh 1회 보장하도록 재설계.",
+    ],
   },
   erp: {
     id: "erp",
@@ -94,7 +98,9 @@ export const projects = {
     tagline: "API 없는 ERP를 UI 자동화한 양방향 데이터 파이프라인",
     period: "2026.02 - 2026.02 (인턴)",
     role: "고민 필요",
-    oneLiner:
-      "API도 DB 접근도 없는 ERP를 pywinauto UI 자동화로 뚫어, 5년치 62만 건 백필 + 15종 태스크 무인 자동화.",
+    oneLiner: [
+      "API도 DB 접근도 없는 ERP를 pywinauto UI 자동화로 데이터 소스처럼 다룸.",
+      "5년치 62만 건 백필 + 15종 태스크를 무인 자동화.",
+    ],
   },
 };
