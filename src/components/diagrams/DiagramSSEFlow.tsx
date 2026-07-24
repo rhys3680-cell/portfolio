@@ -17,29 +17,37 @@ type Step = {
 };
 
 const steps: Step[] = [
-  { icon: <MessageSquare />, label: "질문 입력", note: "자연어로 리포트 요청" },
+  {
+    icon: <MessageSquare />,
+    label: "질문 입력",
+    note: "자연어로\n리포트를 요청합니다",
+  },
   {
     icon: <Loader />,
     label: "리포트 생성 시작",
-    note: "LLM 처리 · 수 분 소요",
+    note: "LLM이 처리합니다\n수 분 소요",
   },
-  { icon: <Type />, label: "실시간 타이핑", note: "토큰이 30ms 간격으로 렌더" },
+  {
+    icon: <Type />,
+    label: "실시간 타이핑",
+    note: "토큰이 30ms \n간격으로\n렌더됩니다",
+  },
   {
     icon: <LogOut />,
     label: "다른 페이지로 이동",
-    note: "스트림은 스토어가 소유",
+    note: "스트림은\n스토어가 소유합니다",
     accent: true,
   },
   {
     icon: <RotateCcw />,
     label: "돌아와도 계속됨",
-    note: "연결이 안 끊긴다",
+    note: "연결이\n끊기지 않습니다",
     accent: true,
   },
   {
     icon: <CheckCircle2 />,
     label: "리포트 완성",
-    note: "done 후 큐 비우고 종료",
+    note: "done 후 큐를 비우고\n종료합니다",
   },
 ];
 
@@ -79,7 +87,9 @@ export function DiagramSSEFlow() {
               {step.label}
             </p>
             {step.note && (
-              <p className="text-xs leading-tight text-muted">{step.note}</p>
+              <p className="whitespace-pre-line text-xs leading-tight text-muted">
+                {step.note}
+              </p>
             )}
           </div>
           {i < steps.length - 1 && <FlowArrow />}
