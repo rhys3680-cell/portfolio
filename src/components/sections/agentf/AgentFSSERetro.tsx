@@ -19,7 +19,7 @@ export function AgentFSSERetro() {
       <SectionHeading
         eyebrow="Agent-F · Retrospective"
         title="다시 만든다면"
-        sub="SSE를 밑바닥부터 구현하며 내린 두 판단을, 지금 관점에서 되돌아본다."
+        sub="SSE를 구현하며 내린 사고과정을, 지금 관점에서 되돌아본다."
       />
 
       <Troubleshooting>
@@ -36,8 +36,8 @@ export function AgentFSSERetro() {
               연결 생명주기는 서버 책임
             </strong>
             으로 옮겼고, 그러자 클라이언트의 타임아웃 정리·재개 로직이 통째로
-            사라져 코드가 더 얇아졌다. &ldquo;내가 만든 걸 덜어내는&rdquo;
-            판단이었다.
+            사라져 코드가 더 얇아졌다. &ldquo;만든 걸 덜어내는&rdquo;
+            과정이었다.
           </p>
         </TroubleshootingBlock>
 
