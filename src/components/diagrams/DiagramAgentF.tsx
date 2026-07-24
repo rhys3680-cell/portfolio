@@ -1,5 +1,5 @@
 import {
-  ArrowDown,
+  ArrowRight,
   Boxes,
   Webhook,
   Radio,
@@ -13,32 +13,47 @@ import {
   SiSpring,
 } from "react-icons/si";
 import { DiagramNode } from "./DiagramNode";
+import type { ReactNode } from "react";
 
-// 계층 사이 굵은 화살표
-function Arrow() {
+// 열 사이 가로 화살표 (모바일에선 세로)
+function FlowArrow() {
   return (
-    <ArrowDown
+    <ArrowRight
       aria-hidden
-      className="my-1 size-7 text-muted"
       strokeWidth={2.5}
+      className="size-7 shrink-0 rotate-90 self-center text-muted lg:rotate-0 print:rotate-0"
     />
+  );
+}
+
+// 계층 열: 제목 + 노드들
+function Column({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="flex flex-1 flex-col gap-3">
+      <p className="text-center text-xs font-bold uppercase tracking-wider text-muted">
+        {title}
+      </p>
+      <div className="flex flex-1 flex-col justify-center gap-3">
+        {children}
+      </div>
+    </div>
   );
 }
 
 export function DiagramAgentF() {
   return (
-    <div className="flex flex-col items-center text-center">
-      {/* 1. 브라우저 (Next.js) */}
-      <DiagramNode
-        icon={<SiNextdotjs className="text-foreground" />}
-        label="브라우저 — Next.js"
-        note="App Router · FSD 4계층"
-      />
+    <div className="flex flex-col items-stretch gap-3 lg:flex-row lg:items-stretch print:flex-row print:items-stretch">
+      <Column title="클라이언트">
+        <DiagramNode
+          icon={<SiNextdotjs className="text-foreground" />}
+          label="브라우저 — Next.js"
+          note="App Router · FSD 4계층"
+        />
+      </Column>
 
-      <Arrow />
+      <FlowArrow />
 
-      {/* 2. 상태관리 2갈래 */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <Column title="상태 관리">
         <DiagramNode
           icon={<SiReactquery className="text-[#FF4154]" />}
           label="TanStack Query"
@@ -47,15 +62,14 @@ export function DiagramAgentF() {
         <DiagramNode
           icon={<Boxes className="text-accent-2" />}
           label="Zustand"
-          note="SSE 실시간 상태·연결"
+          note="SSE 실시간 상태"
           accent
         />
-      </div>
+      </Column>
 
-      <Arrow />
+      <FlowArrow />
 
-      {/* 3. 데이터 소스 4갈래 */}
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <Column title="데이터 소스">
         <DiagramNode
           icon={<Webhook className="text-foreground" />}
           label="REST API"
@@ -70,31 +84,28 @@ export function DiagramAgentF() {
         <DiagramNode
           icon={<FileJson className="text-foreground" />}
           label="정적 JSON·SVG"
-          note="지도·비교 데이터"
+          note="지도·비교"
         />
         <DiagramNode
           icon={<Cloud className="text-foreground" />}
           label="S3 CDN"
           note="상품 이미지"
         />
-      </div>
+      </Column>
 
-      <Arrow />
+      <FlowArrow />
 
-      {/* 4. 백엔드 (Spring) */}
-      <DiagramNode
-        icon={<SiSpring className="text-[#6DB33F]" />}
-        label="백엔드 — Spring"
-      />
-
-      <Arrow />
-
-      {/* 5. LLM */}
-      <DiagramNode
-        icon={<SiLangchain className="text-warn" />}
-        label="LLM 리포트 생성"
-        note="수 분 소요"
-      />
+      <Column title="백엔드">
+        <DiagramNode
+          icon={<SiSpring className="text-[#6DB33F]" />}
+          label="Spring"
+        />
+        <DiagramNode
+          icon={<SiLangchain className="text-warn" />}
+          label="LLM 리포트"
+          note="수 분 소요"
+        />
+      </Column>
     </div>
   );
 }
