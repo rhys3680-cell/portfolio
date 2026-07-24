@@ -3,9 +3,6 @@
  * 레이아웃과 분리, 유지보수성
  */
 
-import { Zap, ShieldCheck, Gauge } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
 export const profile = {
   name: "윤창기",
   role: "프론트엔드 엔지니어",
@@ -22,41 +19,6 @@ export const profile = {
       "https://married-run-059.notion.site/39f107043b9481c4a060ef4ab20458cb",
   },
 } as const;
-
-/** 핵심 성과 */
-export const highlights: {
-  icon: LucideIcon;
-  title: string;
-  desc: string[]; // ← string에서 string[]로
-  href: string;
-}[] = [
-  {
-    icon: Zap,
-    title: "인증 멀티룸 SSE 스트리밍",
-    desc: [
-      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 직접 구현.",
-      "연결 소유권을 전역 스토어로 옮겨 페이지 이동에도 스트림이 유지되게 설계.",
-    ],
-    href: "#agent-f",
-  },
-  {
-    icon: ShieldCheck,
-    title: "JWT refresh race condition 해결",
-    desc: [
-      "동시 401을 in-flight Promise 공유(single-flight)로 refresh 1회 보장.",
-    ],
-    href: "#challenger",
-  },
-  {
-    icon: Gauge,
-
-    title: "렌더 병목 O(N²)→O(N)",
-    desc: [
-      "대량 조회 시 UI 프리징을 유발하던 Array.find를 복합 키 Map 인덱싱으로 전환.",
-    ],
-    href: "#agent-f",
-  },
-];
 
 export const stack = {
   main: [
@@ -92,10 +54,6 @@ export const projects = {
       "인증·토큰 처리 및 axios 클라이언트",
       "상태관리 아키텍처 — 서버 상태(TanStack Query)와 실시간 상태(Zustand) 분리",
     ],
-    oneLiner: [
-      "헤더 인증이 필요한 SSE를 Fetch(ReadableStream) 기반으로 직접 구현했습니다.",
-      "연결 소유권을 전역 스토어로 옮겨, 페이지를 이동해도 스트림이 끊기지 않게 설계했습니다.",
-    ],
   },
   challenger: {
     id: "challenger",
@@ -103,10 +61,6 @@ export const projects = {
     tagline: "패션기업 MD를 위한 B2B 업무 웹앱",
     period: "2026.01 - 2026.02 (인턴)",
     role: "핵심 업무 화면부터 인증·상태관리 인프라까지 프론트 설계·구현",
-    oneLiner: [
-      "동시 요청 시 터지던 JWT refresh race condition을 분석.",
-      "boolean flag가 아니라 in-flight Promise 싱글톤으로 refresh 1회 보장하도록 재설계.",
-    ],
   },
   erp: {
     id: "erp",
@@ -114,9 +68,5 @@ export const projects = {
     tagline: "API 없는 ERP를 UI 자동화한 양방향 데이터 파이프라인",
     period: "2026.02 - 2026.02 (인턴)",
     role: "고민 필요",
-    oneLiner: [
-      "API도 DB 접근도 없는 ERP를 pywinauto UI 자동화로 데이터 소스처럼 다룸.",
-      "5년치 62만 건 백필 + 15종 태스크를 무인 자동화.",
-    ],
   },
 };
