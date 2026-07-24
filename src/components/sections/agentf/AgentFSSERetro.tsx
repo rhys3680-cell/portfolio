@@ -4,55 +4,30 @@ import {
   Troubleshooting,
   TroubleshootingBlock,
 } from "@/components/layout/Troubleshooting";
-
-function C({ children }: { children: React.ReactNode }) {
-  return (
-    <code className="rounded bg-surface px-1.5 py-0.5 font-mono text-[0.9em]">
-      {children}
-    </code>
-  );
-}
+import { DiagramEventBus } from "@/components/diagrams/DiagramEventBus";
 
 export function AgentFSSERetro() {
   return (
     <Section id="agent-f-sse-retro" breakAfter>
       <SectionHeading
-        eyebrow="Agent-F · Retrospective"
+        eyebrow="Agent-F · SSE ③"
         title="다시 만든다면"
-        sub="SSE를 구현하며 내린 사고과정을, 지금 관점에서 되돌아본다."
+        sub="SSE를 구현하며 내린 판단을 지금 관점에서 되돌아봅니다."
       />
 
       <Troubleshooting>
-        <TroubleshootingBlock label="생명주기를 서버로" tone="retro">
-          <p>
-            초기엔{" "}
+        <TroubleshootingBlock label="store 결합을 이벤트 버스로" tone="retro">
+          <p className="mb-5">
+            SSE 매니저 store가 chat store의 메서드를 직접 호출해{" "}
             <strong className="text-foreground/90">
-              클라이언트가 연결 생명주기를 쥐었다
-            </strong>{" "}
-            — 30분간 ping 없는 stale 연결을 <C>AbortController</C>로
-            정리(GC)하고, 그렇게 끊긴 방에 돌아오면 <C>Last-Event-ID</C>로
-            재개해 스트리밍을 이어받았다. 하지만 백엔드와 논의 끝에{" "}
-            <strong className="text-foreground/90">
-              연결 생명주기는 서버 책임
+              두 store가 강하게 결합
             </strong>
-            으로 옮겼고, 그러자 클라이언트의 타임아웃 정리·재개 로직이 통째로
-            사라져 코드가 더 얇아졌다. &ldquo;만든 걸 덜어내는&rdquo;
-            과정이었다.
+            돼 있었습니다. 다시 만든다면 이벤트 버스(발행-구독)로 분리해, SSE
+            매니저는 이벤트를 발행만 하고 store는 구독해 상태만 갱신하게
+            하겠습니다. 발행자와 구독자가 서로를 모르게 되어 결합이 풀리고, 8종
+            이벤트를 다루기도 깔끔해집니다.
           </p>
-        </TroubleshootingBlock>
-
-        <TroubleshootingBlock label="라이브러리 선택" tone="retro">
-          <p>
-            사실 <C>@microsoft/fetch-event-source</C>처럼 헤더 인증을 지원하는
-            라이브러리가 이미 있었다. 당시엔 네이티브의 한계만 보고 직접
-            구현했는데,{" "}
-            <strong className="text-foreground/90">
-              지금이라면 라이브러리부터 검토했을 것이다.
-            </strong>{" "}
-            다만 그 과정에서 SSE 프레임 파싱·재연결·이벤트 순서를 밑바닥까지
-            이해한 건 자산으로 남았고, 정작 핵심인 &ldquo;연결 소유권을
-            스토어로&rdquo;는 라이브러리와 무관한 판단이었다.
-          </p>
+          <DiagramEventBus />
         </TroubleshootingBlock>
       </Troubleshooting>
     </Section>
