@@ -26,6 +26,7 @@ export const profile = {
   ],
   links: {
     github: "github.com/rhys3680-cell",
+    email: "smd99540@gmail.com",
     resume:
       "https://married-run-059.notion.site/39f107043b9481c4a060ef4ab20458cb",
   },

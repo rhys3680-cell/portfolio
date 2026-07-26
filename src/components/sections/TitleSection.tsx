@@ -34,12 +34,18 @@ export function TitleSection() {
         ))}
       </ul>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+      <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+        <a
+          href={`mailto:${profile.links.email}`}
+          className="flex items-center gap-1 transition-colors hover:text-accent"
+        >
+          {profile.links.email}
+        </a>
         <a
           href={`https://${profile.links.github}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="transition-colors hover:text-accent"
+          className="flex items-center gap-1 transition-colors hover:text-accent"
         >
           {profile.links.github}
         </a>

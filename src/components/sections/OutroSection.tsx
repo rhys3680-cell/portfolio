@@ -51,6 +51,12 @@ export function OutroSection() {
       {/* 컨택 */}
       <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
         <a
+          href={`mailto:${profile.links.email}`}
+          className="flex items-center gap-1 transition-colors hover:text-accent"
+        >
+          {profile.links.email}
+        </a>
+        <a
           href={`https://${profile.links.github}`}
           target="_blank"
           rel="noopener noreferrer"
