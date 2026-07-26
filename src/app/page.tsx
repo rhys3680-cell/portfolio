@@ -5,6 +5,7 @@ import { AgentFSSEFlow } from "@/components/sections/agentf/AgentFSSEFlow";
 import { AgentFSSERetro } from "@/components/sections/agentf/AgentFSSERetro";
 import { ChallengerJWT } from "@/components/sections/challenger/ChallengerJWT";
 import { ChallengerOverview } from "@/components/sections/challenger/ChallengerOverview";
+import { ERPSection } from "@/components/sections/ERPSection";
 import { SummarySection } from "@/components/sections/SummarySection";
 import { TitleSection } from "@/components/sections/TitleSection";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <AgentFSSERetro />
       <ChallengerOverview />
       <ChallengerJWT />
+      <ERPSection />
     </main>
   );
 }
