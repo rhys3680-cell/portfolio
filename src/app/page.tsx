@@ -3,6 +3,7 @@ import { AgentFOverview } from "@/components/sections/agentf/AgentFOverview";
 import { AgentFSSE } from "@/components/sections/agentf/AgentFSSE";
 import { AgentFSSEFlow } from "@/components/sections/agentf/AgentFSSEFlow";
 import { AgentFSSERetro } from "@/components/sections/agentf/AgentFSSERetro";
+import { ChallengerJWT } from "@/components/sections/challenger/ChallengerJWT";
 import { ChallengerOverview } from "@/components/sections/challenger/ChallengerOverview";
 import { SummarySection } from "@/components/sections/SummarySection";
 import { TitleSection } from "@/components/sections/TitleSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <AgentFSSE />
       <AgentFSSERetro />
       <ChallengerOverview />
+      <ChallengerJWT />
     </main>
   );
 }
