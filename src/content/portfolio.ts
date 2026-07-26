@@ -1,3 +1,14 @@
+import {
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiReactquery,
+  SiTailwindcss,
+  SiSupabase,
+  SiPython,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
+
 /**
  * 포트폴리오 컨텐츠 원본 (v1-docs에서 추출·정제).
  * 레이아웃과 분리, 유지보수성
@@ -20,18 +31,34 @@ export const profile = {
   },
 } as const;
 
-export const stack = {
-  main: [
-    "TypeScript",
-    "React",
-    "Next.js (App Router)",
-    "TanStack Query",
-    "Zustand",
-    "Tailwind",
-  ],
-  sub: ["Next.js 서버함수", "Supabase/PostgreSQL", "Python (Pandas·SQL)"],
-  ai: ["LLM 응답 SSE 스트리밍 렌더링", "PoC 설계"],
-} as const;
+export const stack: {
+  group: string;
+  items: { label: string; icon?: IconType }[];
+}[] = [
+  {
+    group: "주력",
+    items: [
+      { label: "TypeScript", icon: SiTypescript },
+      { label: "React", icon: SiReact },
+      { label: "Next.js", icon: SiNextdotjs },
+      { label: "TanStack Query", icon: SiReactquery },
+      { label: "Zustand" }, // 로고 없음
+      { label: "Tailwind", icon: SiTailwindcss },
+    ],
+  },
+  {
+    group: "경험",
+    items: [
+      { label: "Next.js 서버함수" },
+      { label: "Supabase / PostgreSQL", icon: SiSupabase },
+      { label: "Python", icon: SiPython },
+    ],
+  },
+  {
+    group: "AI 연동",
+    items: [{ label: "LLM SSE 스트리밍" }, { label: "PoC 설계" }],
+  },
+] as const;
 
 export const education = [
   "청년취업사관학교 'AI로 완성하는 핀테크 데이터 분석가' (2026.05~) — Python·ML",
