@@ -19,7 +19,7 @@ export function AgentFSSE() {
     <Section id="agent-f-sse" breakAfter>
       <SectionHeading
         eyebrow="Agent-F · SSE ②"
-        title="어떻게 구현했나"
+        title="구현"
         sub="헤더 인증·다중 연결·이벤트 순서를 직접 풀고, 연결 소유권을 컴포넌트 밖으로 옮겼습니다."
       />
 

@@ -11,7 +11,7 @@ export function AgentFSSERetro() {
     <Section id="agent-f-sse-retro" breakAfter>
       <SectionHeading
         eyebrow="Agent-F · SSE ③"
-        title="다시 만든다면"
+        title="회고"
         sub="SSE를 구현하며 내린 판단을 지금 관점에서 되돌아봅니다."
       />
 
