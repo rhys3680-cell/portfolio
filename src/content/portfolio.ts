@@ -16,13 +16,13 @@ import type { IconType } from "react-icons";
 
 export const profile = {
   name: "윤창기",
-  role: "프론트엔드 엔지니어",
-  tagline: "React·TypeScript로 AI 제품을 만드는 프론트엔드 엔지니어",
-  catch: "겉으로 드러나지 않는 문제를 근본까지 파고듭니다",
+  role: "AX 개발자",
+  tagline: "데이터와 AI로 실제 업무 도구를 만드는 AX 개발자",
+  catch: "반복 업무를 넘어 현업의 판단 기준과 데이터 흐름까지 제품으로 만듭니다",
   range: [
-    { label: "실시간 스트리밍 렌더링" },
-    { label: "인증·상태관리" },
-    { label: "렌더 성능 최적화" },
+    { label: "업무 흐름 분석" },
+    { label: "데이터·AI 제품" },
+    { label: "현업 자동화" },
   ],
   links: {
     github: "github.com/rhys3680-cell",
@@ -104,6 +104,31 @@ export const projects = {
     name: "ERP 자동화 파이프라인",
     tagline: "API 없는 ERP를 UI 자동화한 양방향 데이터 파이프라인",
     period: "2026.02 - 2026.02 (인턴)",
-    role: "고민 필요",
+    role: "Windows ERP UI 자동화·DB 동기화 파이프라인 설계 및 구현",
   },
 };
+
+export const additionalProjects = [
+  {
+    name: "FDS",
+    eyebrow: "Data Engineering · ML Policy",
+    summary:
+      "IEEE-CIS 데이터의 분석 저장소와 GCP 파이프라인을 만들고, 모델 점수를 실제 조사 용량에 맞춘 임계값 정책으로 연결했습니다.",
+    points: [
+      "DuckDB 기반 109만 건 거래 분석 저장소",
+      "BigQuery·Airflow 기반 재현 가능한 데이터 파이프라인",
+      "정확도 경쟁보다 운영 가능한 탐지 정책과 조사 우선순위 설계",
+    ],
+  },
+  {
+    name: "Alexandria",
+    eyebrow: "Personal AI Desktop · Local First",
+    summary:
+      "글과 음성을 로컬에서 정리하고 찾아주는 개인 AI 데스크톱 앱입니다. Markdown을 원본으로, SQLite를 파생 인덱스로 사용합니다.",
+    points: [
+      "whisper.cpp 기반 오프라인 음성 기록",
+      "로컬 임베딩과 RRF 하이브리드 검색",
+      "Notion 2,967페이지 이관 전 dry-run과 필터링으로 예상 비용 절감",
+    ],
+  },
+] as const;

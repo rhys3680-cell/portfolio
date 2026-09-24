@@ -1,4 +1,5 @@
 import { AgentFArchitecture } from "@/components/sections/agentf/AgentFArchitecture";
+import { AdditionalProjectsSection } from "@/components/sections/AdditionalProjectsSection";
 import { AgentFOverview } from "@/components/sections/agentf/AgentFOverview";
 import { AgentFSSE } from "@/components/sections/agentf/AgentFSSE";
 import { AgentFSSEFlow } from "@/components/sections/agentf/AgentFSSEFlow";
@@ -23,6 +24,7 @@ export default function Home() {
       <ChallengerOverview />
       <ChallengerJWT />
       <ERPSection />
+      <AdditionalProjectsSection />
       <OutroSection />
     </main>
   );

@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "윤창기 · 프론트엔드 엔지니어",
+  title: "윤창기 · AX 개발자",
   description:
-    "React·TypeScript로 AI 제품을 만드는 프론트엔드 엔지니어. 슬라이드 포트폴리오.",
+    "업무 흐름을 분석해 데이터 파이프라인, AI 제품, 자동화 도구로 바꾸는 AX 개발자 포트폴리오.",
 };
 
 export default function RootLayout({

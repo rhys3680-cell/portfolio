@@ -19,6 +19,23 @@ export function ERPSection() {
           </strong>
           을 채웠습니다.
         </p>
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {[
+            "약 62만 건·5년치 데이터",
+            "수집 11종·업로드 4종",
+            "백필 세션 1,800회 → 60회",
+            "순수 로직 테스트 235개",
+          ].map((item) => (
+            <li key={item} className="rounded-xl border border-border bg-surface p-4 font-bold">
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8">
+          추천 결과의 실제 일치율 한계를 확인한 뒤 완전 자동화를 고집하지 않고,
+          후보 추천과 사람 승인을 분리했습니다. 자동화의 목표를 사람 제거가 아니라
+          판단에 집중할 시간 확보로 정의했습니다.
+        </p>
       </div>
     </Section>
   );
